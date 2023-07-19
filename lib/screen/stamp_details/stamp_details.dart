@@ -134,7 +134,7 @@ class StampDetails extends StatelessWidget {
                       Get.toNamed(Routes.editStore);
                     },
                     child: SizedBox(
-                      height: SizeConfig.blockSizeVertical! * 21,
+                      height: SizeConfig.blockSizeVertical! * 22,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: const [

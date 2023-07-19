@@ -69,8 +69,7 @@ class DropDown2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
-          child: Container(
+       Container(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             decoration: const ShapeDecoration(
               shape: RoundedRectangleBorder(
@@ -109,10 +108,6 @@ class DropDown2 extends StatelessWidget {
               }).toList(),
             ),
           ),
-        ),
-        const Expanded(
-          child: SizedBox(),
-        ),
       ],
     );
   }
@@ -161,42 +156,83 @@ class _CheckListState extends State<CheckList> {
           ),
         ),
         Container(
-          height: SizeConfig.safeBlockVertical! * 12,
+          height: 85,
           child: SingleChildScrollView(
-            child: GridView.count(
-              padding: EdgeInsets.zero,
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              childAspectRatio: 5.0 / 2.0,
-              crossAxisCount: 4,
-              mainAxisSpacing: 0,
-              crossAxisSpacing: 0,
-              children: List.generate(check.length, (index) {
-                return Row(
+            child: Column(
+              children: [
+                Row(
                   children: [
-                    Checkbox(
-                      checkColor: Colors.white,
-                      activeColor: Color.fromRGBO(238, 125, 66, 1),
-                      value: check[index]["check"],
-                      onChanged: (bool? value) {
-                        setState(() {
-                          check[index]["check"] = value!;
-                        });
-                      },
-                    ),
-                    Text(
-                      check[index]["title"],
-                      style: GoogleFonts.notoSans(
-                        textStyle: const TextStyle(
-                          fontSize: 14,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w400,
-                        ),
+                    Expanded(
+                      child: CheckboxListTile(
+                        title: const Text('月'),
+                        value: false,
+                        controlAffinity: ListTileControlAffinity.leading,
+                        onChanged: (bool? value) {},
                       ),
-                    )
+                    ),
+                    Expanded(
+                      child: CheckboxListTile(
+                        title: const Text('火'),
+                        value: false,
+                        controlAffinity: ListTileControlAffinity.leading,
+                        onChanged: (bool? value) {},
+                      ),
+                    ),
+                    Expanded(
+                      child: CheckboxListTile(
+                        title: const Text('水'),
+                        value: false,
+                        controlAffinity: ListTileControlAffinity.leading,
+                        onChanged: (bool? value) {},
+                      ),
+                    ),
+                    Expanded(
+                      child: CheckboxListTile(
+                        title: const Text('木'),
+                        value: false,
+                        controlAffinity: ListTileControlAffinity.leading,
+                        onChanged: (bool? value) {},
+                      ),
+                    ),
                   ],
-                );
-              }),
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: CheckboxListTile(
+                        title: const Text('金'),
+                        value: false,
+                        controlAffinity: ListTileControlAffinity.leading,
+                        onChanged: (bool? value) {},
+                      ),
+                    ),
+                    Expanded(
+                      child: CheckboxListTile(
+                        title: const Text('土'),
+                        value: true,
+                        controlAffinity: ListTileControlAffinity.leading,
+                        onChanged: (bool? value) {},
+                      ),
+                    ),
+                    Expanded(
+                      child: CheckboxListTile(
+                        title: const Text('日'),
+                        value: true,
+                        controlAffinity: ListTileControlAffinity.leading,
+                        onChanged: (bool? value) {},
+                      ),
+                    ),
+                    Expanded(
+                      child: CheckboxListTile(
+                        title: const Text('祝'),
+                        value: true,
+                        controlAffinity: ListTileControlAffinity.leading,
+                        onChanged: (bool? value) {},
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         )
