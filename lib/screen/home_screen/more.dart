@@ -16,8 +16,16 @@ class ImageContainer extends StatelessWidget {
             alignment: Alignment.topLeft,
             clipBehavior: Clip.none,
             children: [
-              Card(
-                elevation: 2,
+              Container(
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: const [BoxShadow(
+                  offset: Offset(0,4),
+                  blurRadius: 25,
+                  color: Color.fromRGBO(136, 160, 187, 0.15)
+                )]
+              ),
                 child: Column(
                   children: [
                     Image.asset(
@@ -196,9 +204,15 @@ class ImageContainer extends StatelessWidget {
             alignment: Alignment.topLeft,
             clipBehavior: Clip.none,
             children: [
-              Card(
-                elevation: 2,
-                child: Container(
+               Container(decoration: BoxDecoration(
+                 color: Colors.white,
+                   borderRadius: BorderRadius.circular(15),
+                   boxShadow: const [BoxShadow(
+                       offset: Offset(0,4),
+                       blurRadius: 25,
+                       color: Color.fromRGBO(136, 160, 187, 0.15)
+                   )]
+               ),
                   child: Column(
                     children: [
                       Container(
@@ -351,7 +365,6 @@ class ImageContainer extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
               Positioned(
                 top: (context.mediaQuerySize.height > 851 &&
                         context.mediaQuerySize.height < 940)

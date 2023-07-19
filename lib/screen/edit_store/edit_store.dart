@@ -229,7 +229,7 @@ class ProfileEdit extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  Container(height: Get.height / 6.5, child: CheckList()),
+                  Container(height: Get.height / 6.5, child: const CheckList()),
                   const SizedBox(
                     height: 10,
                   ),
